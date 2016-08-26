@@ -1,9 +1,9 @@
-(function() {
+(function () {
   'use strict';
 
   angular
     .module('app')
-    .directive('main', function() {
+    .directive('main', function () {
       return {
         restrict: 'E',
         templateUrl: 'app/components/main/main.html',
@@ -13,26 +13,23 @@
       };
     });
 
-  MainCtrl.$inject = ['$http'];
+  MainCtrl.$inject = ['$http', 'angularGridInstance'];
 
-  function MainCtrl($http) {
+  function MainCtrl($http, angularGridInstance) {
     var vm = this;
 
-    vm.thing = {};
-    vm.status = '';
-
-    vm.getThings = function() {
-      $http.get('/api/things')
-        .then(function(response) {
-          vm.thingsList = response.data;
+    vm.getImages = function () {
+      $http.get('/api/images')
+        .then(function (response) {
+          vm.images = response.data;
         });
     };
 
-    vm.postThing = function() {
-      $http.post('/api/things', vm.thing)
-        .then(function() {
-          vm.status = 'OK';
-        });
+    vm.refreshImages = function () {
+      vm.images = [];
+      vm.getImages();
     };
+
+    vm.refreshImages();
   }
 })();
