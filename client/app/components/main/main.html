@@ -1,14 +1,14 @@
-<div class="container-fluid">
+<div class="container-fluid" style="width: 100%; padding: 0;">
   <div class="jumbotron">
     <div class="container">
       <h1>{{'main.helloWorld' | translate}}</h1>
       <p>{{'main.text' | translate}}</p>
     </div>
   </div>
-  <div class="container">
+  <div class="container" style="width: 100%;">
     <h2>List of images</h2>
     <div>
-      <div class="dynamic-grid" angular-grid="mainVm.images" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="true">
+      <div class="dynamic-grid" angular-grid="mainVm.images" grid-width="300" gutter-size="0" angular-grid-id="gallery" refresh-on-img-load="true">
         <image-card ng-repeat="imageData in mainVm.images track by $index" image-data=imageData ></image-card>
         <li ng-if="mainVm.images.length === 0">
           <strong>No results found...</strong>

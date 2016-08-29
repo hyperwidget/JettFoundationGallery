@@ -21,6 +21,8 @@
     "angulargrid": "^0.6.0",
     "angular-masonry": "^0.16.0",
     "angular-masonry-directive": "*",
-    "masonry": "^4.1.1"
+    "masonry": "^4.1.1",
+    "imagesloaded": "^4.1.0",
+    "packery": "^2.1.1"
   }
 }

@@ -1,19 +1,19 @@
-(function() {
-  'use strict';
+// (function() {
+//   'use strict';
 
-  angular
-    .module('app')
-    .config(routes);
+//   angular
+//     .module('app')
+//     .config(routes);
 
-  routes.$inject = ['$stateProvider', '$urlRouterProvider'];
+//   routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function routes($stateProvider, $urlRouterProvider) {
+//   function routes($stateProvider, $urlRouterProvider) {
 
-    $stateProvider.state('home', {
-      url: '/',
-      template: '<main></main>'
-    });
+//     $stateProvider.state('home', {
+//       url: '/',
+//       template: '<main></main>'
+//     });
 
-    $urlRouterProvider.otherwise('/');
-  }
-})();
+//     $urlRouterProvider.otherwise('/');
+//   }
+// })();

@@ -29,15 +29,15 @@ gulp.task('client:lint-dev', function() {
     .pipe(eslint.format())
 });
 
-gulp.task('client:template', function() {
-  return gulp.src(['client/app/**/*.html'])
-    .pipe(templateCache('app.tpl.js', {
-      root: 'app',
-      module: 'appTemplates',
-      standalone: true
-    }))
-    .pipe(gulp.dest('.tmp/'));
-});
+// gulp.task('client:template', function() {
+//   return gulp.src(['client/app/**/*.html'])
+//     .pipe(templateCache('app.tpl.js', {
+//       root: 'app',
+//       module: 'appTemplates',
+//       standalone: true
+//     }))
+//     .pipe(gulp.dest('.tmp/'));
+// });
 
 gulp.task('client:inject', function() {
   return gulp.src('client/index.html')
@@ -82,7 +82,7 @@ function reload(done) {
 
 gulp.task('client:watch', function() {
   gulp.watch('client/*.html', gulp.series(['client:inject'], reload));
-  gulp.watch('client/app/**/*.html', gulp.series(['client:template', 'client:inject'], reload));
+  // gulp.watch('client/app/**/*.html', gulp.series(['client:template', 'client:inject'], reload));
   gulp.watch('client/app/**/*.js', gulp.series(['client:lint-dev', 'client:inject'], reload));
   gulp.watch('client/**/*.css', reload);
   gulp.watch('client/i18n/*.json', reload);
@@ -98,7 +98,6 @@ gulp.task('client:build', function() {
   return gulp.src('.tmp/index.html')
     .pipe(useref())
     .pipe(jsFilter)
-    .pipe(ngAnnotate())
     .pipe(uglify())
     .pipe(rev())
     .pipe(jsFilter.restore)
@@ -129,5 +128,5 @@ gulp.task('client:copy-fonts-dist', gulp.parallel([
 ]));
 
 /* Main Tasks for client */
-gulp.task('client:default', gulp.series(['client:lint-dev', 'client:template', 'client:inject', 'client:copy-i18n', 'client:serve', 'client:watch']));
-gulp.task('client:dist', gulp.series(['client:lint', 'client:template', 'client:inject', 'client:copy-i18n-dist', 'client:copy-fonts-dist', 'client:build']));
+gulp.task('client:default', gulp.series(['client:lint-dev', 'client:inject', 'client:copy-i18n', 'client:serve', 'client:watch']));
+gulp.task('client:dist', gulp.series(['client:lint', 'client:inject', 'client:copy-i18n-dist', 'client:copy-fonts-dist', 'client:build']));
