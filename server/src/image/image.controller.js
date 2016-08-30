@@ -5,7 +5,7 @@ var path = require('path');
 var pemFile = path.resolve(__dirname, '../../../mykey.pem');
 var tokenFile = path.resolve(__dirname, '../../../token');
 var jwt = require('jsonwebtoken');
-
+var tries = 0;
 /**
  * GET /images
  *
@@ -13,14 +13,41 @@ var jwt = require('jsonwebtoken');
  * list of things
  *
  */
-exports.find = function () {
-  console.log('Get');
-  refreshToken();
-  // return res.status(200).json(testJson)
-};
+
+function queryServer (){
+  request.post({
+    url: 'https://www.socialpatrol.net/api/external/jettfoundation',
+    headers: [
+        {
+          name: 'authorization',
+          value: 'bearer ' + fs.readFileSync(tokenFile)
+        }
+      ],
+    json: {streams:[71,72]}, offset:0, limit:20}
+    , function (error, response, body) {
+    if (!error) {
+      console.log(body, ' body');
+      console.log(error, ' error');
+
+      if(!error){
+        if(body.message !== 'REFRESH_TOKEN'){
+          return res.status(200).json(testJson);
+        } else if(tries >= 3) {
+          return res.status(200).json({errorMessage: 'Issues communicating with the server, please try again later'});          
+        } else {
+          tries++;
+          refreshToken(()=>{
+            queryServer();
+          })
+        }
+      }
+    }
+  });
+}
+exports.find = queryServer;
 
 
-function refreshToken() {
+function refreshToken(callback) {
   var date = new Date();
   var jwto;
   var hour = date.getTime() + (date.getHours() * 60 * 60 * 1000);
@@ -42,7 +69,7 @@ function refreshToken() {
   }, function (error, response, body) {
     if (!error) {
       fs.writeFile(tokenFile, body.access_token);
-      console.log(body.access_token);
+      callback();
     }
   });
 }
