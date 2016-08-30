@@ -14,7 +14,9 @@
     "config": "^1.16.0",
     "cors": "^2.7.1",
     "express": "^4.13.3",
-    "mongoose": "^4.4.7"
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.4.7",
+    "njwt": "^0.3.1"
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",

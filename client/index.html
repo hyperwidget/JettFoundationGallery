@@ -45,64 +45,77 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="#">Project name</a>
+        <a class="navbar-brand" href="#">Jett Foundation #makeamuscle</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
+        <ul class="nav navbar-nav navbar-center">
+          <li><a href="./">Icuc sponser</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../navbar/">Default</a></li>
-          <li><a href="../navbar-static-top/">Static top</a></li>
-          <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+          <li><a href="./">Donate</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </nav>
+
   <div class="container-fluid" style="width: 100%; padding: 0;">
     <div class="jumbotron">
-      <div class="container">
-        <h1>Hello World</h1>
-        <p>This is some text</p>
-      </div>
-    </div>
-    <div class="container" style="width: 100%;">
-      <div>
-        <div id="grid">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#tab1">Tab 1</a></li>
+        <li><a data-toggle="tab" href="#tab2">Tab 2</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <h3>Default Tab</h3>
+          <p>Some content.</p>
         </div>
-        <div id="no-images">
-          <strong>No results found...</strong>
+        <div id="tab1" class="tab-pane fade">
+          <h3>Tab 1</h3>
+          <p>Some content in tab 1.</p>
+        </div>
+        <div id="tab2" class="tab-pane fade">
+          <h3>Tab 2</h3>
+          <p>Some content in tab 2.</p>
         </div>
       </div>
     </div>
 
-    <!-- build:js scripts/vendor.js -->
-    <script src="../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="../bower_components/packery/dist/packery.pkgd.min.js"></script>
-    <script src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js"></script>
-    <!-- endbuild -->
-    <!-- build:js({client,.tmp/}) scripts/app.js -->
-    <!-- inject:js -->
-    <!-- app scripts will go here... -->
-    <!-- endinject -->
-    <!-- endbuild -->
+    <div class="container">
+      <h1>Hello World</h1>
+      <p>This is some text</p>
+    </div>
+
+    <div class="container" style="width: 100%;">
+      <div id="grid">
+        <div class="info-div grid-item">
+          A couple points about ICUC
+          <ul>
+            <li>This is a top point</li>
+            <li>This is another point</li>
+            <li>This is a final point</li>
+          </ul>
+        </div>
+      </div>
+      <div id="load-more">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- build:js scripts/vendor.js -->
+  <script src="../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="../bower_components/packery/dist/packery.pkgd.min.js"></script>
+  <script src="../bower_components/imagesLoaded/imagesLoaded.pkgd.min.js"></script>
+  <!-- endbuild -->
+  <!-- build:js({client,.tmp/}) scripts/app.js -->
+  <!-- inject:js -->
+  <!-- app scripts will go here... -->
+  <!-- endinject -->
+  <!-- endbuild -->
 </body>
 
 </html>
