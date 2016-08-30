@@ -1,7 +1,58 @@
+body{
+  font-family: "Droid Sans","Verdana","Arial",sans-serif;
+}
+
+.logo{
+  width: 100px;
+  height: 52px;
+  display: inline-block;
+  background: url(http://jettfoundation.org/jett/wp-content/themes/jett14/images/logo-jett-2x.png) 0 0 no-repeat;
+  background-size: 100px 52px;
+  text-indent: -9999px;
+  outline: none;
+}
+
+.navbar-brand{
+  font-style: normal;
+  font-size: 18px;
+  color: #d64436 !important;
+  font-weight: 700;
+  display: block;
+}
+
 .grid-item{
   max-width: 25%;
 }
 
 .info-div{
   width: 25%;
+}
+
+.donate{
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.donate strong{
+  color: #777777;
+}
+
+.donate-button{
+    text-transform: uppercase;
+    background: #d64436;
+    color: #ffffff !important; 
+    margin: 0 50px 0 10px;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 1px;
+    box-shadow: 0 4px 4px -2px #cccccc;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    display: inline-block !important;
+}
+
+.donate-button:hover {
+    background: #b43125 !important;
+    color: #ffffff !important;
 }
