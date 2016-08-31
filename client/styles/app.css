@@ -13,12 +13,26 @@ body{
     background: white;
 }
 
+.navbar-center{
+  margin-left: 16%;
+}
+
 .logo{
-  width: 100px;
-  height: 52px;
+  width: 130px;
+  height: 67px;
   display: inline-block;
-  background: url(http://jettfoundation.org/jett/wp-content/themes/jett14/images/logo-jett-2x.png) 0 0 no-repeat;
-  background-size: 100px 52px;
+  background: url(../JettLogo.svg) 0 0 no-repeat;
+  background-size: 130px 75px;
+  text-indent: -9999px;
+  outline: none;
+}
+
+.icuc-logo{
+  width: 200px;
+  height: 67px;
+  display: inline-block;
+  background: url(../IcucLogo.svg) 0 0 no-repeat;
+  background-size: 200px 75px;
   text-indent: -9999px;
   outline: none;
 }
@@ -29,6 +43,10 @@ body{
   color: #d64436 !important;
   font-weight: 700;
   display: block;
+}
+
+.offset-container{
+  margin-top: 57px;
 }
 
 #sponsers img{
