@@ -1,5 +1,16 @@
 body{
   font-family: "Droid Sans","Verdana","Arial",sans-serif;
+  background: #444444;
+}
+
+.navbar-fixed-top{
+  border-bottom: 3px solid black;
+}
+
+.navbar-fixed-top .container{
+    width: 100%;
+    padding-left: 54px;
+    background: white;
 }
 
 .logo{
@@ -20,12 +31,21 @@ body{
   display: block;
 }
 
+#sponsers img{
+  max-width: 136px;
+}
+
+#grid{
+  overflow-y: scroll;
+}
+
 .grid-item{
   max-width: 25%;
 }
 
 .info-div{
   width: 25%;
+  background: #ffffff;
 }
 
 .donate{
@@ -37,7 +57,7 @@ body{
   color: #777777;
 }
 
-.donate-button{
+.donate-button, .load-more{
     text-transform: uppercase;
     background: #d64436;
     color: #ffffff !important; 
@@ -52,7 +72,23 @@ body{
     display: inline-block !important;
 }
 
-.donate-button:hover {
+.donate-button:hover, .load-more:hover {
     background: #b43125 !important;
     color: #ffffff !important;
+}
+
+#load-more{
+  margin-top: 20px;
+}
+
+.load-more{
+      width: 30%;
+    line-height: 4em;
+    font-size: 2.5em;
+    margin-left: 35%;
+}
+
+.post-grid{
+    margin-top: 20px;
+    background: #ffffff;  
 }

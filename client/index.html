@@ -37,7 +37,7 @@
   <![endif]-->
 
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
           aria-controls="navbar">
@@ -57,14 +57,14 @@
           <li class="donate">
             <strong>Today Counts.</strong>
             <a class="donate-button" href="http://www.jettfoundation.org/get-involved/donate/">Donate!</a>
-            </li>
+          </li>
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </nav>
 
-  <div class="container-fluid" style="width: 100%; padding: 0;">
+  <div class="container-fluid row">
     <div class="jumbotron">
       <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
@@ -87,15 +87,75 @@
       </div>
     </div>
 
-    <div class="container">
-      <h1>Hello World</h1>
-      <p>This is some text</p>
+    <div class="container-fluid row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel">
+              <h3>Join the Duchenne Now community</h3>
+              <p>Duchenne Now launched in March 2012, we have an open, new and different approach to achieving our goals.</p>
+
+              <p>The Trustees of the Charity are all parents of children LIVING WITH DUCHENNE of varying ages from 7 to 19 they
+                know how important it is to progress with viable treatments as quickly as possible until a cure is found.
+                Between the trustees there is well over 20 years of dedicated Duchenne charity experience. Members of the
+                board have strong relationships with key members of the international Duchenne community which includes charities,
+                clinicians and researchers.</p>
+
+              <p>We are dedicated to treating everyone with Duchenne and we will only fund projects with a clear road map to
+                market within a reasonable time frame; we need to quickly find, test and make available Intermediate treatments
+                for all people living with Duchenne today, it is in our view a scandal that the only available treatment
+                at the moment is steroids, this needs to change. We are convinced this can be achieved; together we can make
+                viable intermediate treatments a reality for all.</p>
+
+              <p>Duchenne Now works closely with the business community promoting our ethos of where possible 100% of what is
+                donated goes to treat and run trials for those living with Duchenne, from the start we have encouraged business
+                partners to sponsor the running costs of the charity so that our fundraisers, friends and families know every
+                single penny goes to fighting Duchenne. The business community have rallied around so far by sponsoring our
+                office space, phones and Internet also one member of staff. We also have business support for our fundraising
+                materials and this very website. Duchenne Now achieved 100% status last year when we managed to get sponsorship
+                for our last remaining expense of £18 pm to just giving.</p>
+
+              <p>Duchenne Now Trustees are determined make the running of your charity totally transparent we feel it is no
+                longer acceptable to expect families and those fundraising for us to hand over hard earned funding and not
+                be sure where it goes or what it goes on, we publish our accounts in an easy to understand way monthly for
+                all to see. Trustees will seek out viable research and trial projects making recommendations to our members
+                who will be invited to vote on which projects to fund, we will show comments costs, expected time frames
+                and any relevant information. All projects must always fit in with our ethos of treating all in the shortest
+                time possible and have a clear road map to market.</p>
+
+              <p>We will optimise every single penny donated to us by obtaining where possible services for free or via donation.
+                We appreciate how much effort people put in to raising funds, especially in today's hard financial climate.
+                The Trustees are totally open minded about any potential treatments or research and who we partner with,
+                our aim is to treat this generation of people living with Duchenne the ability to work with others and think
+                outside the box is in our view a must if we are to achieve our aims, no one deserves to be forgotten or left
+                behind.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3" id="sponsers">
+        <div class="panel">
+          <h3>Special Mentions</h3>
+          <div class="row">
+            <div class="col-md-6 col-sm-12"><img border="0" class="ccm-image-block" alt="" src="http://www.duchennenow.org/files/cache/5d817b324d7a5298f8af943900ba20a3_f180.jpg"></div>
+            <div class="col-md-6 col-sm-12"><img border="0" class="ccm-image-block" alt="" src="http://www.duchennenow.org/files/cache/a8e7ac262ec5ef05b62c8e72d2b001d7_f182.jpg"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-12"><img border="0" class="ccm-image-block" alt="" src="http://www.duchennenow.org/files/cache/935db65b0437b0ec8e5e692104baaa55_f181.png"></div>
+            <div class="col-md-6 col-sm-12"><img border="0" class="ccm-image-block" alt="" src="http://www.duchennenow.org/files/cache/00b9ce8f58320fa017fe151070ab9c25_f183.jpg"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-12"><img border="0" class="ccm-image-block" alt="" src="http://www.duchennenow.org/files/cache/ecc70ab8b9e0e94a02c360b02905c063_f184.png"></div>
+            <div class="col-md-6 col-sm-12"><img border="0" class="ccm-image-block" alt="" src="http://www.duchennenow.org/files/cache/ecc70ab8b9e0e94a02c360b02905c063_f184.png"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="container" style="width: 100%;">
+    <div class="container-fluid">
       <div id="grid">
         <div class="info-div grid-item">
-          A couple points about ICUC
+          <h3>A couple points about ICUC</h3>
           <ul>
             <li>This is a top point</li>
             <li>This is another point</li>
@@ -104,7 +164,18 @@
         </div>
       </div>
       <div id="load-more">
+        <button class="btn btn-large load-more" type="button" onclick="getImages();">Load More</button>
+      </div>
+    </div>
 
+    <div class="container-fluid post-grid">
+      <div class="row">
+        <h1>Some content</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+          dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+          specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
     </div>
   </div>
