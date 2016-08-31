@@ -1,7 +1,7 @@
 {
-  "name": "mean-starter-kit",
-  "decription": "Starter kit (seed) for MEAN stack applications - MongoDB, Express, AngularJS, NodeJS with Gulp",
-  "version": "0.2.0",
+  "name": "JettFoundationGallery",
+  "description": "A simple gallery project that interacts with ICUC's API to display images for JettFoundation",
+  "version": "0.5.0",
   "repository": "danivek/mean-starter-kit",
   "scripts": {
     "start": "node ./node_modules/gulp/bin/gulp.js",
