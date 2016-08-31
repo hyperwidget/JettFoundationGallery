@@ -1,5 +1,5 @@
 {
-  "name": "JettFoundationGallery",
+  "name": "jett-foundation-gallery",
   "description": "A simple gallery project that interacts with ICUC's API to display images for JettFoundation",
   "version": "0.5.0",
   "dependencies": {
