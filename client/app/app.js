@@ -26,7 +26,7 @@ function appendImages(images) {
 
   if (images.length > 0) {
     images.forEach(function (image) {
-      var img = $('<img>'); //Equivalent: $(document.createElement('img'))
+      var img = $('<img>');
       img.attr('src', image.url);
       img.attr('class', 'grid-item');
       $grid.append(img)

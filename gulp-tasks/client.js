@@ -129,4 +129,4 @@ gulp.task('client:copy-fonts-dist', gulp.parallel([
 
 /* Main Tasks for client */
 gulp.task('client:default', gulp.series(['client:lint-dev', 'client:inject', 'client:copy-i18n', 'client:serve', 'client:watch']));
-gulp.task('client:dist', gulp.series(['client:lint', 'client:inject', 'client:copy-i18n-dist', 'client:copy-fonts-dist', 'client:build']));
+gulp.task('client:dist', gulp.series(['client:inject', 'client:copy-i18n-dist', 'client:copy-fonts-dist', 'client:build']));

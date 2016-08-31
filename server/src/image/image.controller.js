@@ -17,27 +17,29 @@ var tries = 0;
 
 function queryServer(req, res) {
   var offset = req.offset;
-  console.log(offset);
+  console.log('token');
+  console.log(fs.readFileSync(tokenFile).toString());
   request.post({
     url: 'https://www.socialpatrol.net/api/external/jettfoundation',
-    headers: [
+    headers: 
       {
-        name: 'authorization',
-        value: 'bearer ' + fs.readFileSync(tokenFile)
+        'Authorization': 'Bearer ' + fs.readFileSync(tokenFile).toString()
       }
-    ],
-    json: { streams: [71, 72] }, offset: offset, limit: 20
+    ,
+    json: { streams: [2418] }, offset: offset, limit: 20
   },
     function (error, response, body) {
       if (!error) {
-        if (body.message !== 'REFRESH_TOKEN') {
+        if (body.messageType !== 'error') {
+          console.log(body);
           return res.status(200).json(testJson);
         } else if (tries >= 3) {
           return res.status(200).json({ errorMessage: 'Issues communicating with the server, please try again later' });
         } else {
           tries++;
-          refreshToken(function(){
-            queryServer();
+          console.log('Trying again; try number ' + tries );
+          refreshToken(req, res, function(req, res){
+            queryServer(req, res);
           })
         }
       } else {
@@ -47,7 +49,7 @@ function queryServer(req, res) {
 }
 exports.find = queryServer;
 
-function refreshToken(callback) {
+function refreshToken(req, res, callback) {
   var date = new Date();
   var jwto;
   var hour = date.getTime() + (date.getHours() * 60 * 60 * 1000);
@@ -68,8 +70,9 @@ function refreshToken(callback) {
     }
   }, function (error, response, body) {
     if (!error) {
+      console.log('token success');
       fs.writeFile(tokenFile, body.access_token);
-      callback();
+      callback(req,res);
     }
   });
 }
