@@ -49,12 +49,32 @@ body{
   margin-top: 57px;
 }
 
+.premier-sponser{
+    max-width: none !important;
+    width: 100%;
+}
+
 #sponsers img{
   max-width: 136px;
 }
 
 #grid{
   overflow-y: scroll;
+}
+
+.icuc-circle{
+width: 100%;
+}
+
+.icuc-circle-div-overlay{
+  position: absolute;
+  top: 0;
+  display: none;
+  background: #777777;
+  height: 100%;
+  width: 100%; 
+  z-index: 999;
+  opacity: .6;
 }
 
 .grid-item{
@@ -109,4 +129,26 @@ body{
 .post-grid{
     margin-top: 20px;
     background: #ffffff;  
+}
+
+.footer-logo{
+  margin-left: 42%;
+}
+
+#footer{
+  color: white;
+  padding-bottom: 15px;
+}
+
+#footer a{
+  color: white;
+  
+}
+
+.left{
+  float:left;
+}
+
+.right{
+  float: right;
 }

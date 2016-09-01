@@ -17,8 +17,6 @@ var tries = 0;
 
 function queryServer(req, res) {
   var offset = req.offset;
-  console.log('token');
-  console.log(fs.readFileSync(tokenFile).toString());
   request.post({
     url: 'https://www.socialpatrol.net/api/external/jettfoundation',
     headers: 
