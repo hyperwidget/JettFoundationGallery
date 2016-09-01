@@ -16,14 +16,14 @@ var browserSync = require('browser-sync');
 var proxy = require('http-proxy-middleware');
 var os = require('os');
 
-gulp.task('client:lint', function() {
+gulp.task('client:lint', function () {
   return gulp.src(['client/app/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('client:lint-dev', function() {
+gulp.task('client:lint-dev', function () {
   return gulp.src(['client/app/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
@@ -39,7 +39,7 @@ gulp.task('client:lint-dev', function() {
 //     .pipe(gulp.dest('.tmp/'));
 // });
 
-gulp.task('client:inject', function() {
+gulp.task('client:inject', function () {
   return gulp.src('client/index.html')
     .pipe(inject(gulp.src(['client/**/*.js', '.tmp/*.tpl.js']).pipe(angularFilesort()), {
       ignorePath: ['client', '.tmp'],
@@ -48,12 +48,12 @@ gulp.task('client:inject', function() {
     .pipe(gulp.dest('.tmp/'));
 });
 
-gulp.task('client:copy-i18n', function() {
+gulp.task('client:copy-i18n', function () {
   return gulp.src('bower_components/angular-i18n/*.js')
     .pipe(gulp.dest('.tmp/i18n/angular'));
 });
 
-gulp.task('client:serve', function(cb) {
+gulp.task('client:serve', function (cb) {
 
   // Proxy Middleware to Express app
   var proxyServer = proxy('/api', {
@@ -80,7 +80,7 @@ function reload(done) {
   done();
 }
 
-gulp.task('client:watch', function() {
+gulp.task('client:watch', function () {
   gulp.watch('client/*.html', gulp.series(['client:inject'], reload));
   // gulp.watch('client/app/**/*.html', gulp.series(['client:template', 'client:inject'], reload));
   gulp.watch('client/app/**/*.js', gulp.series(['client:lint-dev', 'client:inject'], reload));
@@ -88,7 +88,7 @@ gulp.task('client:watch', function() {
   gulp.watch('client/i18n/*.json', reload);
 });
 
-gulp.task('client:build', function() {
+gulp.task('client:build', function () {
   var jsFilter = filter('**/*.js', {
     restore: true
   });
@@ -127,6 +127,22 @@ gulp.task('client:copy-fonts-dist', gulp.parallel([
   }
 ]));
 
+gulp.task('client:copy-public-files', gulp.parallel([
+  function copyJett() {
+    return gulp.src(['client/JettLogo2.jpg', 'client/IcucCircle.png', 'client/IcucLogo.svg'])
+      // Perform minification tasks, etc here
+      .pipe(gulp.dest('dist/public'));
+  }
+]));
+
+gulp.task('client:copy-key-files', gulp.parallel([
+  function copyJett() {
+    return gulp.src(['./token', './mykey.pem'])
+      // Perform minification tasks, etc here
+      .pipe(gulp.dest('dist'));
+  }
+]));
+
 /* Main Tasks for client */
 gulp.task('client:default', gulp.series(['client:lint-dev', 'client:inject', 'client:copy-i18n', 'client:serve', 'client:watch']));
-gulp.task('client:dist', gulp.series(['client:inject', 'client:copy-i18n-dist', 'client:copy-fonts-dist', 'client:build']));
+gulp.task('client:dist', gulp.series(['client:inject', 'client:copy-key-files', 'client:copy-public-files', 'client:copy-i18n-dist', 'client:copy-fonts-dist', 'client:build']));
