@@ -5,6 +5,7 @@ body{
 
 .navbar-fixed-top{
   border-bottom: 3px solid black;
+  background: #fff;
 }
 
 .navbar-fixed-top .container{
@@ -18,11 +19,11 @@ body{
 }
 
 .logo{
-  width: 130px;
-  height: 67px;
+  width: 424px;
+  height: 50px;
   display: inline-block;
-  background: url(../JettLogo.svg) 0 0 no-repeat;
-  background-size: 130px 75px;
+  background: url(../JettLogo2.jpg) 0 0 no-repeat;
+  background-size: 424px 50px;
   text-indent: -9999px;
   outline: none;
 }
@@ -46,7 +47,7 @@ body{
 }
 
 .offset-container{
-  margin-top: 57px;
+  margin-top: 47px;
 }
 
 .premier-sponser{
@@ -132,7 +133,7 @@ width: 100%;
 }
 
 .footer-logo{
-  margin-left: 42%;
+  width: 100%;
 }
 
 #footer{

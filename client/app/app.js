@@ -2,7 +2,7 @@ var offset = 0
 
 function getImages() {
   $.get("/api/images?offset=" + offset, function (data) {
-    appendImages(data);
+    appendImages(data.entries);
     offset++;
   });
 };
@@ -19,7 +19,8 @@ function appendImages(images) {
   if (images.length > 0) {
     images.forEach(function (image) {
       var img = $('<img>');
-      img.attr('src', image.url);
+      var pictures = JSON.parse(decodeURIComponent(image.entry_data)).pictures;
+      img.attr('src', pictures[0]);
       img.attr('class', 'grid-item');
       $grid.append(img)
         // add and lay out newly appended items
