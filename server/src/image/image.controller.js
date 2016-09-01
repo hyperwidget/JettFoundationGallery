@@ -30,7 +30,6 @@ function queryServer(req, res) {
     function (error, response, body) {
       if (!error) {
         if (body.messageType !== 'error') {
-          console.log(body);
           return res.status(200).json(body);
         } else if (tries >= 3) {
           return res.status(200).json({ errorMessage: 'Issues communicating with the server, please try again later' });
