@@ -58,4 +58,4 @@ gulp.task('server:test', function() {
 
 /* Main Tasks for server */
 gulp.task('server:default', gulp.series(['server:lint-dev', 'server:serve', 'server:watch']));
-gulp.task('server:dist', gulp.series(['server:lint', 'server:build']));
+gulp.task('server:dist', gulp.series(['server:build']));
