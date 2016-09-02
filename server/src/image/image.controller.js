@@ -5,7 +5,6 @@ var path = require('path');
 var pemFile = path.resolve(__dirname, '../../../mykey.pem');
 var tokenFile = path.resolve(__dirname, '../../../token');
 var jwt = require('jsonwebtoken');
-var tries = 0;
 
 /**
  * GET /images
@@ -47,7 +46,7 @@ function queryServer(req, res) {
           'Authorization': 'Bearer ' + body.access_token
         }
         ,
-        json: { streams: [2419] }, offset: offset * limit, limit: limit
+        json: { streams: [2407, 2408] }, offset: offset * limit, limit: limit
       },
         function (error, response, body) {
           if (!error) {
@@ -67,30 +66,30 @@ function queryServer(req, res) {
 }
 exports.find = queryServer;
 
-function refreshToken(req, res, callback) {
-  var date = new Date();
-  var jwto;
-  var hour = date.getTime() + (date.getHours() * 60 * 60 * 1000);
-  var key = fs.readFileSync(pemFile);
-  var assertion = {
-    'iss': 'devugc@service.account',
-    'exp': parseInt(hour.toString().substring(0, 10)),
-    'iat': parseInt(new Date().getTime().toString().substring(0, 10)),
-  };
+// function refreshToken(req, res, callback) {
+//   var date = new Date();
+//   var jwto;
+//   var hour = date.getTime() + (date.getHours() * 60 * 60 * 1000);
+//   var key = fs.readFileSync(pemFile);
+//   var assertion = {
+//     'iss': 'devugc@service.account',
+//     'exp': parseInt(hour.toString().substring(0, 10)),
+//     'iat': parseInt(new Date().getTime().toString().substring(0, 10)),
+//   };
 
-  jwto = jwt.sign(assertion, key, { algorithm: 'RS256' });
+//   jwto = jwt.sign(assertion, key, { algorithm: 'RS256' });
 
-  request.post({
-    url: 'https://www.socialpatrol.net/service/oauth2/token',
-    json: {
-      'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-      'assertion': jwto
-    }
-  }, function (error, response, body) {
-    if (!error) {
-      console.log('token success');
-      fs.writeFile(tokenFile, body.access_token);
-      callback(req, res);
-    }
-  });
-}
+//   request.post({
+//     url: 'https://www.socialpatrol.net/service/oauth2/token',
+//     json: {
+//       'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+//       'assertion': jwto
+//     }
+//   }, function (error, response, body) {
+//     if (!error) {
+//       console.log('token success');
+//       fs.writeFile(tokenFile, body.access_token);
+//       callback(req, res);
+//     }
+//   });
+// }
