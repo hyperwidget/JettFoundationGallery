@@ -129,7 +129,7 @@ gulp.task('client:copy-fonts-dist', gulp.parallel([
 
 gulp.task('client:copy-public-files', gulp.parallel([
   function copyJett() {
-    return gulp.src(['client/**.jpg', 'client/IcucCircle.png', 'client/IcucLogo.svg'])
+    return gulp.src(['client/**.jpg', 'client/**.png', 'client/IcucLogo.svg'])
       // Perform minification tasks, etc here
       .pipe(gulp.dest('dist/public'));
   }
