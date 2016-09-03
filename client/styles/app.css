@@ -209,7 +209,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .grid-item {
-    max-width: 33%;
+    width: 33%;
   }
 }
 
@@ -218,7 +218,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   .grid-item {
-    max-width: 50%;
+    width: 50%;
   }
   .load-more {
     width: 75%;
@@ -234,7 +234,7 @@ body {
 
 @media only screen and (max-width: 320px) {
   .grid-item {
-    max-width: 50%;
+    width: 50%;
   }
   .load-more {
     width: 75%;
