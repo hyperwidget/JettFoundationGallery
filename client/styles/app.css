@@ -54,6 +54,10 @@ body {
   width: 100%;
 }
 
+.sc{
+  font-size: 1.21em;
+}
+
 .huggin {
   color: #990000;
   font-size: 1.5em;
@@ -64,8 +68,13 @@ body {
   width: 100%;
 }
 
+.hug-funders{
+  font-family: 'Chewy', cursive;
+  font-size: 3.1em;
+}
+
 #sponsers img {
-  max-width: 136px;
+  width: 100%;
 }
 
 #grid {
