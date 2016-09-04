@@ -46,7 +46,7 @@ function queryServer(req, res) {
           'Authorization': 'Bearer ' + body.access_token
         }
         ,
-        json: { streams: [2407, 2421] }, offset: offset * limit, limit: limit
+        json: { streams: [2407, 2421] }, offset: req.query.offset * limit, limit: limit
       },
         function (error, response, body) {
           if (!error) {
