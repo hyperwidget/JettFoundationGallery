@@ -18,7 +18,7 @@ function appendImages(images) {
 
   if (images.length > 0) {
     images.forEach(function (image) {
-      if (JSON.parse(decodeURIComponent(image.entry_data)).pictures !== undefined) {
+      if (image.entry_data !== "null" && JSON.parse(decodeURIComponent(image.entry_data)).pictures !== undefined) {
         var div = $('<div>');
         div.attr('class', 'grid-item');
         var img = $('<img>');
