@@ -1,5 +1,13 @@
 # JettFoundationGallery / HugFunders
 
+# Quick Start
+
+```npm install && bower install```
+
+```gulp```
+
+# About
+
 A quick weekend project for Jett Foundation's one month event.
 
 This is a simple tile based gallery consisting of pictures fetched from an external api. This site is no longer live, as the compaign is ended, but I've decided to open source the code anyway.
