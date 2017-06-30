@@ -6,6 +6,8 @@ var pemFile = path.resolve(__dirname, '../../../mykey.pem');
 var tokenFile = path.resolve(__dirname, '../../../token');
 var jwt = require('jsonwebtoken');
 
+var mongo = require('mongodb');
+
 /**
  * GET /images
  *
@@ -50,6 +52,28 @@ function queryServer(req, res) {
         function (error, response, body) {
           if (!error) {
             if (body.messageType !== 'error') {
+              var MongoClient = mongo.MongoClient;
+              var dbUrl = 'mongodb://localhost:27017/uploaded_images';
+
+              MongoClient.connect(dbUrl, function(err, db){
+                if(err){
+                  console.log('Unable to connect to db', err);
+                } else {
+                  console.log('Connection established');
+
+                  var collection = db.collection('user_images');
+                  var images = JSON.stringify(body.entries);
+
+                  collection.insert([images], function(err){
+                    if(err){
+                      console.log(err);
+                    } else {
+                      //do nothing
+                    }
+                  })
+                }
+              })
+
               return res.status(200).json(body);
             } else {
               return res.status(200).json({ errorMessage: 'Issues communicating with the server, please try again later' });
