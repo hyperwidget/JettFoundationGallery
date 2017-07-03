@@ -4,11 +4,15 @@
 .patch
 .tmp
 .idea/
+.vscode
 
+data
 node_modules/
 bower_components/
 .tmp/
 dist/
 coverage/
+npm-debug**
 
 token
+
